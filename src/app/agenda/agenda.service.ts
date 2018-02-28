@@ -20,7 +20,7 @@ export class AgendaService {
   };
 
   public storeContato(data): any {
-    return this.http.post(this.contatoUrl+'/store/'+data.id, data);
+    return this.http.post(this.contatoUrl+'/create/', data);
   }
 
   public updateContato(data): any {

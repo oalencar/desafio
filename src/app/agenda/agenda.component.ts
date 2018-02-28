@@ -30,7 +30,6 @@ export class AgendaComponent implements OnInit {
     this.agendaService.getAgenda(this.id).subscribe(
       data => {
         this.titulo = data.titulo;
-        console.log(data);
         this.contatos = data.contatos;
       },
       error => {}

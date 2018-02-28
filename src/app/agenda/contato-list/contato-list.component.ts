@@ -1,5 +1,6 @@
 import { AgendaService } from './../agenda.service';
 import { Component, Input, OnInit } from '@angular/core';
+import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-contato-list',
@@ -9,11 +10,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class ContatoListComponent implements OnInit {
+  
   private agendaService: AgendaService;
+  private ngbModal: NgbModal;
+  private novoContato: any = {"nome": "", "telefone": "", "agenda_id" : null};
+  private agenda_id: number;
+  private searchText: string = '';
+
   constructor(
-    agendaService: AgendaService
+    agendaService: AgendaService,
+    ngbModal: NgbModal,
   ) { 
     this.agendaService = agendaService;
+    this.ngbModal = ngbModal;
+    this.setAgendaId(this.getAgendaId());
   }
 
   ngOnInit() {
@@ -55,6 +65,29 @@ export class ContatoListComponent implements OnInit {
       return (array[index][params.key] === params.value) ? !!(array.splice(index, 1)) : false;
     });
     return array;
+  }
+
+  openModal(content){
+    this.ngbModal.open(content);
+  }
+
+  adicionarContato(data){
+    this.agendaService.storeContato(data).subscribe(
+      data => {
+        this.contatos.push(data.contato);
+        this.novoContato.nome = '';
+        this.novoContato.telefone = ''
+      },
+      error => {}
+    );
+  }
+
+  getAgendaId(){
+    return this.agenda_id = parseInt(localStorage.getItem('user_agenda_id'));
+  }
+
+  setAgendaId(agendaId){
+    this.novoContato.agenda_id = agendaId;
   }
 
 }

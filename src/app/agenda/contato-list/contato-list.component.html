@@ -1,5 +1,14 @@
-
-<div *ngFor="let c of contatos" class="input-group">
+<div class="row mb-4">
+  <div class="col-md-8">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" [(ngModel)]="searchText" type="search" placeholder="Filtrar" aria-label="Filtrar" name="filtrarContato">
+    </form>
+  </div>
+  <div class="col-md-4 text-right">
+      <button class="btn btn-primary" type="button" (click)="openModal(content)">+ Contato</button>
+  </div>
+</div>
+<div *ngFor="let c of contatos|filter:searchText" class="input-group">
     <div class="input-group">
         <input type="text" [(ngModel)]="c.nome" class="form-control">
         <input type="text" [(ngModel)]="c.telefone" class="form-control">
@@ -9,3 +18,22 @@
         </div>
       </div>
 </div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Adicionar contato</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <label>Nome</label>
+        <input type="text" [(ngModel)]="novoContato.nome" class="form-control" placeholder="Digite o nome">
+        <label>Telefone</label>
+        <input type="text" [(ngModel)]="novoContato.telefone" class="form-control" placeholder="Digite o telefone">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="adicionarContato(novoContato); c('Close click');">Adicionar</button>
+    </div>
+  </ng-template>
