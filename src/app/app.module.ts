@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RoutingModule } from './/routing.module';
@@ -21,7 +23,9 @@ import { CadastroModule } from './cadastro/cadastro.module';
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    HttpClientModule,
+    RoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

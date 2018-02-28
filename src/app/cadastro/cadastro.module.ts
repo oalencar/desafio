@@ -2,6 +2,7 @@ import { CadastroCallbackComponent } from './cadastro-callback/cadastro-callback
 import { CadastroIndexComponent } from './cadastro-index/cadastro-index.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CadastroService } from './cadastro.service';
 
 @NgModule({
   imports: [
@@ -10,6 +11,7 @@ import { CommonModule } from '@angular/common';
   declarations: [
     CadastroIndexComponent,
     CadastroCallbackComponent
-  ]
+  ],
+  providers: [CadastroService]
 })
 export class CadastroModule { }
