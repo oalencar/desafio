@@ -1,3 +1,4 @@
+import { ContatoListComponent } from './contato-list/contato-list.component';
 import { AgendaService } from './agenda.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -5,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-agenda',
   templateUrl: './agenda.component.html',
   styleUrls: ['./agenda.component.css'],
-  providers: [AgendaService]
+  providers: [AgendaService],
+  
 })
 export class AgendaComponent implements OnInit {
 
@@ -28,6 +30,8 @@ export class AgendaComponent implements OnInit {
     this.agendaService.getAgenda(this.id).subscribe(
       data => {
         this.titulo = data.titulo;
+        console.log(data);
+        this.contatos = data.contatos;
       },
       error => {}
     );

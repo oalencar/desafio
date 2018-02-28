@@ -1,3 +1,4 @@
+import { ContatoListComponent } from './agenda/contato-list/contato-list.component';
 import { CadastroIndexComponent } from './cadastro/cadastro-index/cadastro-index.component';
 import { CadastroCallbackComponent } from './cadastro/cadastro-callback/cadastro-callback.component';
 import { HomeComponent } from './home/home.component';
@@ -19,7 +20,8 @@ import { CadastroModule } from './cadastro/cadastro.module';
     AgendaComponent,
     HomeComponent,
     CadastroCallbackComponent,
-    CadastroIndexComponent
+    CadastroIndexComponent,
+    ContatoListComponent
   ],
   imports: [
     BrowserModule,

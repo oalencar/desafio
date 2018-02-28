@@ -35,14 +35,17 @@ export class CadastroIndexComponent implements OnInit {
     event.preventDefault();
     //console.log(cadastroForm.value);
     this.cadastroService.cadastrar(cadastroForm.value)
-            .subscribe(data => {
+            .subscribe(
+              data => {
               localStorage.setItem('user_name', data.user_name);
               localStorage.setItem('user_agenda_id', data.user_agenda_id);
               localStorage.setItem('user_email', data.user_email);
               localStorage.setItem('user_id', data.user_id);
-              this.router.navigate(['/agenda']
+              this.router.navigate(['/agenda']);
             },
-            error => console.log(error) // error path
+            error => {
+              console.log(error) 
+            }
           );
   }
 

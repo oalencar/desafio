@@ -1,0 +1,11 @@
+
+<div *ngFor="let c of contatos" class="input-group">
+    <div class="input-group">
+        <input type="text" [(ngModel)]="c.nome" class="form-control">
+        <input type="text" [(ngModel)]="c.telefone" class="form-control">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" type="button" (click)="atualizarContato(c)">Salvar</button>
+          <button class="btn btn-outline-danger" type="button" (click)="excluirContato(c)">Excluir</button>
+        </div>
+      </div>
+</div>

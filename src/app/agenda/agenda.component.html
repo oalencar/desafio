@@ -1,12 +1,10 @@
-<div class="col-md-6 offset-md-3">
-    <!-- <input type="text" [(ngModel)]="titulo" id="titulo"> -->
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
-          {{ titulo }}
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-        <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-        <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-        <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
-      </div>
+<div class="col-md-8 offset-md-2">
+    <div class="card">
+        <div class="card-header">
+            {{ titulo }}
+        </div>
+        <div class="card-body">
+            <app-contato-list [contatos]="contatos"></app-contato-list>
+        </div>
+    </div>
 </div>
