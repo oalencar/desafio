@@ -1,13 +1,16 @@
+import { RouterModule, Routes }  from '@angular/router';
+import { NgModule } from '@angular/core';
+
+import { AgendaComponent } from './agenda/agenda.component';
 import { CadastroIndexComponent } from './cadastro/cadastro-index/cadastro-index.component';
 import { HomeComponent } from './home/home.component';
-import { AgendaComponent } from './agenda/agenda.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes }  from '@angular/router';
+import { LoginIndexComponent } from './login/login-index/login-index.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'agenda', component: AgendaComponent },
   { path: 'cadastro', component: CadastroIndexComponent }
+  { path: 'login', component: LoginIndexComponent }
 ];
 
 @NgModule({
