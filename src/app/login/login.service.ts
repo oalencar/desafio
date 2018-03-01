@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { HttpHeaders } from '@angular/common/http';
 
-const URL_SERVER_APP = 'https://agendapp.herokuapp.com';
+const URL_SERVER_APP = 'http://35.192.89.205';
 
 @Injectable()
 export class LoginService {

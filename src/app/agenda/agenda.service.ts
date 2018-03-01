@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const URL_SERVER_APP = 'https://agendapp.herokuapp.com';
+const URL_SERVER_APP = 'http://35.192.89.205';
 
 @Injectable()
 export class AgendaService {
@@ -29,7 +29,8 @@ export class AgendaService {
   };
 
   public storeContato(data): any {
-    return this.http.post(this.contatoUrl+'/create/', data, this.httpOptions);
+    console.log(this.httpOptions)
+    return this.http.post(this.contatoUrl+'/create', data, this.httpOptions);
   }
 
   public updateContato(data): any {

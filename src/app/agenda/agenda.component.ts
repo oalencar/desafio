@@ -15,6 +15,7 @@ export class AgendaComponent implements OnInit {
   private titulo: string = '';
   private user_id: number;
   private contatos: Array<{}>
+  
 
   constructor(
     private agendaService: AgendaService
