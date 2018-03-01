@@ -3,28 +3,25 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { HttpHeaders } from '@angular/common/http';
 
+const URL_SERVER_APP = 'https://agendapp.herokuapp.com';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    // 'Authorization': 'my-auth-token'
+    'Content-Type':  'application/json'
   })
 };
 
 @Injectable()
 export class CadastroService {
 
-  private cadastroUrl = 'http://localhost:8001/api/cadastrar';
+  private cadastroUrl = URL_SERVER_APP+'/api/cadastrar';
   
   constructor(private http: HttpClient) {
 
   }
 
-  public cadastrar(data: Array<any>){
-    console.log(data);
+  public cadastrar(data): any{
     return this.http.post(this.cadastroUrl, data, httpOptions);
-    // now returns an Observable of Config
-    //return this.http.get<Config>(this.configUrl);
   };
 
 }

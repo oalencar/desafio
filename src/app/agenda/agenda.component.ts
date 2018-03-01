@@ -20,13 +20,14 @@ export class AgendaComponent implements OnInit {
     private agendaService: AgendaService
   ){
     this.id = parseInt(localStorage.getItem('user_agenda_id')); 
-  }
-
-  ngOnInit() {
     this.getAgenda(this.id);
   }
 
-  public getAgenda(id: number) {
+  ngOnInit() {
+    
+  }
+
+  getAgenda(id: number) {
     this.agendaService.getAgenda(this.id).subscribe(
       data => {
         this.titulo = data.titulo;

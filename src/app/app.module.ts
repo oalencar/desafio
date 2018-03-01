@@ -1,3 +1,4 @@
+import { LogoutIndexComponent } from './logout/logout-index/logout-index.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,7 +26,8 @@ import { RoutingModule } from './/routing.module';
     CadastroCallbackComponent,
     CadastroIndexComponent,
     ContatoListComponent,
-    LoginIndexComponent
+    LoginIndexComponent,
+    LogoutIndexComponent
   ],
   imports: [
     BrowserModule,
