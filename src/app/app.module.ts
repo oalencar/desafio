@@ -17,6 +17,7 @@ import { LoginIndexComponent } from './login/login-index/login-index.component';
 import { LoginModule } from './login/login.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { RoutingModule } from './/routing.module';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RoutingModule } from './/routing.module';
     RoutingModule,
     FormsModule,
     NgbModule.forRoot(),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

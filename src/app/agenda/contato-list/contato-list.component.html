@@ -8,7 +8,7 @@
       <button class="btn btn-primary" type="button" (click)="openModal(content)">+ Contato</button>
   </div>
 </div>
-<div *ngFor="let c of contatos|filter:searchText" class="input-group">
+<div *ngFor="let c of ( contatos | filter:searchText | orderBy: order)" class="input-group">
     <div class="input-group">
         <input type="text" [(ngModel)]="c.nome" class="form-control">
         <input type="text" [(ngModel)]="c.telefone" class="form-control">

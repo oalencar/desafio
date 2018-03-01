@@ -1,6 +1,7 @@
 import { AgendaService } from './../agenda.service';
 import { Component, Input, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { OrderPipe } from 'ngx-order-pipe';
 
 @Component({
   selector: 'app-contato-list',
@@ -27,9 +28,14 @@ export class ContatoListComponent implements OnInit {
   }
 
   ngOnInit() {
+    setInterval(()=>{
+      if (this.contatos ){
+        this.sortContatos();   
+      }
+    }, 500)
   }
 
-  @Input('contatos') contatos: Array<{}>;
+  @Input('contatos') contatos: Array<any>;
 
   atualizarContato(data) {
     this.agendaService.updateContato(data).subscribe(
@@ -88,6 +94,12 @@ export class ContatoListComponent implements OnInit {
 
   setAgendaId(agendaId){
     this.novoContato.agenda_id = agendaId;
+  }
+
+  sortContatos (){
+    this.contatos.sort(function(a,b) {
+      return a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0;
+    });
   }
 
 }
