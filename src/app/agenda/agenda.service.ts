@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const URL_SERVER_APP = 'http://35.192.89.205';
+const URL_SERVER_APP = 'http://206.189.233.108';
 
 @Injectable()
 export class AgendaService {

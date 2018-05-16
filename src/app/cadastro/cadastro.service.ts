@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { HttpHeaders } from '@angular/common/http';
 
-const URL_SERVER_APP = 'http://35.192.89.205';
+const URL_SERVER_APP = 'http://206.189.233.108';
 
 const httpOptions = {
   headers: new HttpHeaders({
